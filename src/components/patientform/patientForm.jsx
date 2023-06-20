@@ -20,6 +20,7 @@ const Form = () => {
   };
 
   const handleSubmit = (event) => {
+    alert("CLICKED");
     event.preventDefault();
 
     const selectedDate = `${formData.month}-${formData.day}-${formData.year}`;
