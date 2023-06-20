@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "serve build -s -n -L -p $PORT",
-    "dev": "vite",
+    "start": "serve build --single -L -p $PORT --omit=dev",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "dev": "vite",
+
     "preview": "vite preview"
   },
   "dependencies": {
