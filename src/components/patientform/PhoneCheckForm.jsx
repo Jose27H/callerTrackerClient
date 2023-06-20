@@ -9,7 +9,7 @@ const Form = () => {
     setNumber(inputValue);
 
     // Perform the POST/fetch API call
-    fetch("http://localhost:5000/api/formnumber", {
+    fetch("callertrackerserver.up.railway.app/api/formnumber", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

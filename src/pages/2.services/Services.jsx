@@ -13,7 +13,9 @@ const Services = () => {
     const patientNumber = sessionStorage.getItem("patientNumber");
 
     // Make an API request to fetch patient data based on the patient number
-    fetch(`http://localhost:5000/api/patientData?name=${patientNumber}`)
+    fetch(
+      `callertrackerserver.up.railway.app/api/patientData?name=${patientNumber}`
+    )
       .then((response) => response.json())
       .then((data) => {
         // Set the fetched patient data in state
