@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "cross-env NODE_ENV=production serve -s build -l $PORT",
+    "start": "cross-env NODE_ENV=production serve -s dist -l $PORT",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
