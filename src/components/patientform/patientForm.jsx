@@ -26,7 +26,7 @@ const Form = () => {
     const selectedDate = `${formData.month}-${formData.day}-${formData.year}`;
 
     fetch("callertrackerserver.up.railway.app/api/form", {
-      method: "POST",
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
