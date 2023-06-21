@@ -24,7 +24,7 @@ const Form = () => {
         if (info === "yes") {
           setButtonColor("blue");
         } else {
-          setButtonColor("red");
+          setButtonColor("blue");
         }
       })
       .catch((error) => {
