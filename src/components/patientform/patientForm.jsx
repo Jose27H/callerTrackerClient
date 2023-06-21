@@ -20,8 +20,9 @@ const Form = () => {
   };
 
   const handleSubmit = (event) => {
-    alert("CLICKED");
     event.preventDefault();
+    // Navigate to the specified URL
+    window.location.href = "/services";
 
     const selectedDate = `${formData.month}-${formData.day}-${formData.year}`;
 
@@ -46,8 +47,7 @@ const Form = () => {
           year: "",
           message: "",
         });
-        // Navigate to the specified URL
-        window.location.href = "/services";
+
         sessionStorage.setItem("patientNumber", formData.phoneNumber);
       })
       .catch((error) => {
