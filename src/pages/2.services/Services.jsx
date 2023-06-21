@@ -41,7 +41,7 @@ const Services = () => {
 
   const handleSubmit = () => {
     // Make an API request to update the observations in the database
-    fetch("http://localhost:5000/api/updateObservations", {
+    fetch("callertrackerserver.up.railway.app/api/updateObservations", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
