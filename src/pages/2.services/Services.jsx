@@ -7,10 +7,9 @@ const Services = () => {
     email: "",
     observations: "",
   });
-
+  const patientNumber = sessionStorage.getItem("patientNumber");
   const fetchPatientData = () => {
     // Get the patient number from session storage
-    const patientNumber = sessionStorage.getItem("patientNumber");
 
     // Make an API request to fetch patient data based on the patient number
     fetch(
@@ -47,7 +46,7 @@ const Services = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        phoneNumber: patientData.phoneNumber,
+        phoneNumber: patientNumber,
         message: patientData.message,
       }),
     })
