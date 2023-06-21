@@ -39,7 +39,7 @@ const Form = () => {
 
   const redirectMe = (event) => {
     sessionStorage.setItem("patientNumber", number);
-    alert("CLICKED");
+
     window.location.href = "/services";
   };
 
@@ -58,7 +58,7 @@ const Form = () => {
           type="submit"
           className={`bg-${buttonColor}-500 hover:bg-${buttonColor}-600 text-white px-4 py-2 rounded-md font-semibold transition-colors duration-300 ml-2`}
           onClick={redirectMe}
-          // disabled={buttonColor !== "blue"}
+          disabled={buttonColor !== "blue"}
         >
           Submit
         </button>
