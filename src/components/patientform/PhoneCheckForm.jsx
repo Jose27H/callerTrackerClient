@@ -9,16 +9,13 @@ const Form = () => {
     setNumber(inputValue);
 
     // Perform the POST/fetch API call
-    fetch(
-      "https://callertrackerserver.up.railway.app/api/formnumber/api/formnumber",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ number: inputValue }),
-      }
-    )
+    fetch("https://callertrackerserver.up.railway.app/api/formnumber", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ number: inputValue }),
+    })
       .then((response) => response.json())
       .then(({ info, pnumber }) => {
         // Handle the response data if needed
