@@ -30,7 +30,7 @@ const Form = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ...formData, selectedDate }),
+      body: { ...formData, selectedDate },
     })
       .then((response) => response.json())
       .then((data) => {
