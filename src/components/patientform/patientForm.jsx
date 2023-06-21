@@ -22,7 +22,6 @@ const Form = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Navigate to the specified URL
-    window.location.href = "/services";
 
     const selectedDate = `${formData.month}-${formData.day}-${formData.year}`;
 
@@ -49,6 +48,7 @@ const Form = () => {
         });
 
         sessionStorage.setItem("patientNumber", formData.phoneNumber);
+        window.location.href = "/services";
       })
       .catch((error) => {
         // Handle errors if any
