@@ -46,7 +46,10 @@ const Services = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message: patientData.message }),
+      body: JSON.stringify({
+        phoneNumber: patientData.phoneNumber,
+        message: patientData.message,
+      }),
     })
       .then((response) => response.json())
       .then((data) => {
