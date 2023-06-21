@@ -53,6 +53,7 @@ const Form = () => {
       .catch((error) => {
         // Handle errors if any
         console.error(error);
+        alert("ERROR");
       });
   };
 
