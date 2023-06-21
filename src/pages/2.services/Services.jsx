@@ -14,7 +14,7 @@ const Services = () => {
 
     // Make an API request to fetch patient data based on the patient number
     fetch(
-      `callertrackerserver.up.railway.app/api/patientData?name=${patientNumber}`
+      `https://callertrackerserver.up.railway.app/api/patientData?name=${patientNumber}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -41,7 +41,7 @@ const Services = () => {
 
   const handleSubmit = () => {
     // Make an API request to update the observations in the database
-    fetch("callertrackerserver.up.railway.app/api/updateObservations", {
+    fetch("https://callertrackerserver.up.railway.app/api/updateObservations", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

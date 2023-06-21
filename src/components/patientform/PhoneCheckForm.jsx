@@ -9,7 +9,7 @@ const Form = () => {
     setNumber(inputValue);
 
     // Perform the POST/fetch API call
-    fetch("callertrackerserver.up.railway.app/api/formnumber", {
+    fetch("https://callertrackerserver.up.railway.app/api/formnumber", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,7 +24,7 @@ const Form = () => {
         if (info === "yes") {
           setButtonColor("blue");
         } else {
-          setButtonColor("blue");
+          setButtonColor("red");
         }
       })
       .catch((error) => {
