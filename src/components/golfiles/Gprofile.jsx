@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from "react";
 
-const GProfile = ({ golferNumber }) => {
+const GProfile = () => {
   const [golferData, setGolferData] = useState(null);
-  golferNumber = sessionStorage.getItem("golferNumber");
+
   useEffect(() => {
-    // Function to fetch golfer data from the backend using golferNumber
+    // Function to fetch golfer data from the backend
     const fetchGolferData = async () => {
       try {
-        const response = await fetch(
-          `https://callertrackerserver.up.railway.app/api/GolferInfo?golferNumber=${golferNumber}`
-        );
-        const data = await response.json();
-        setGolferData(data);
+        // Retrieve golferNumber from sessionStorage
+        const golferNumber = sessionStorage.getItem("golferNumber");
+
+        // Check if golferNumber exists in sessionStorage
+        if (golferNumber) {
+          const response = await fetch(
+            `https://callertrackerserver.up.railway.app/api/GolferInfo?golferNumber=${golferNumber}`
+          );
+          const data = await response.json();
+          setGolferData(data);
+        }
       } catch (error) {
         console.error("Error fetching golfer data:", error);
       }
@@ -19,7 +25,7 @@ const GProfile = ({ golferNumber }) => {
 
     // Call the fetchGolferData function
     fetchGolferData();
-  }, [golferNumber]);
+  }, []);
 
   return (
     <div className="max-w-lg mx-auto mt-8 p-4 bg-white rounded shadow">
