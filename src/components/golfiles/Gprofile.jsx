@@ -26,7 +26,7 @@ const GProfile = ({ golferNumber }) => {
       {golferData ? (
         <div>
           <h2 className="text-2xl font-bold mb-4">
-            Golfer Name: {golferData.golferName}
+            Golfer Name: {golferData.golname}
           </h2>
           <p>Number of Rounds: {golferData.numRounds}</p>
           <p>Average Putts: {golferData.averagePutts}</p>
