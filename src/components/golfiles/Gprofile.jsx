@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const GProfile = ({ golferNumber }) => {
   const [golferData, setGolferData] = useState(null);
-
+  golferNumber = sessionStorage.getItem("golferNumber");
   useEffect(() => {
     // Function to fetch golfer data from the backend using golferNumber
     const fetchGolferData = async () => {
