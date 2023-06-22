@@ -67,6 +67,7 @@ export default function GLogin() {
           setPhoneNumber("");
           setPin("");
           // Navigate to the specified URL
+          sessionStorage.setItem("golferNumber", pNumber);
           window.location.href = "/Golf/Gprofile";
         } else {
           // Display error message
