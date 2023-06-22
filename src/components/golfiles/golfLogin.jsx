@@ -37,7 +37,7 @@ export default function GLogin() {
         setGolferName("");
 
         // this is where i want to redirect to /Golf/Gprofile
-        history.push("/Golf/Gprofile");
+        window.location.href = "/Golf/Gprofile";
       })
       .catch((error) => {
         // Handle errors if any
