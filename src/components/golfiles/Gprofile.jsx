@@ -8,7 +8,7 @@ const GProfile = ({ golferNumber }) => {
     const fetchGolferData = async () => {
       try {
         const response = await fetch(
-          `/api/GolferInfo?golferNumber=${golferNumber}`
+          `https://callertrackerserver.up.railway.app/api/GolferInfo?golferNumber=${golferNumber}`
         );
         const data = await response.json();
         setGolferData(data);
