@@ -16,6 +16,8 @@ export default function GLogin() {
       golferName,
       pin,
     };
+    const pNumber = formData.phoneNumber;
+    sessionStorage.setItem("golferNumber", pNumber);
 
     fetch("https://callertrackerserver.up.railway.app/api/GolfRegisterForm", {
       method: "POST",
@@ -28,7 +30,7 @@ export default function GLogin() {
       .then((data) => {
         // Handle the response data if needed
         console.log(data);
-        sessionStorage.setItem("golferNumber", formData.phoneNumber);
+
         // Clear the form fields
         setPhoneNumber("");
         setPin("");
