@@ -61,17 +61,22 @@ export default function GLogin() {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle the response data if needed
-        console.log(data);
-        // Clear the form fields
-        setPhoneNumber("");
-        setPin("");
-        // Navigate to the specified URL
+        // Handle the response data
+        if (data === "yes") {
+          // Clear the form fields
+          setPhoneNumber("");
+          setPin("");
+          // Navigate to the specified URL
+          window.location.href = "/Golf/Gprofile";
+        } else {
+          // Display error message
+          console.error("Error: Your credentials may be incorrect.");
+          // You can show the error message to the user using an alert or by updating a state variable
+        }
       })
       .catch((error) => {
         // Handle errors if any
         console.error(error);
-        alert("ERROR");
       });
   };
 
