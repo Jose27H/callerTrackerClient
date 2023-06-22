@@ -35,19 +35,14 @@ export default function GLogin() {
         setPhoneNumber("");
         setPin("");
         setGolferName("");
-
-        // this is where i want to redirect to /Golf/Gprofile
-        window.location.href = "/Golf/Gprofile";
       })
       .catch((error) => {
         // Handle errors if any
         console.error(error);
       });
 
-    // Clear the form fields
-
-    // Close the registration popup
-    setShowRegistrationPopup(false);
+    // Redirect to /Golf/Gprofile
+    window.location.href = "/Golf/Gprofile";
   };
 
   const handleLogin = () => {
