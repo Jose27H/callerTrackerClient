@@ -80,7 +80,6 @@ const GProfile = () => {
       console.error("Error starting round:", error);
     }
   };
-
   return (
     <div className="max-w-lg mx-auto mt-8 p-4 bg-white rounded shadow">
       {golferData ? (
@@ -90,12 +89,14 @@ const GProfile = () => {
           </h2>
           <p>Number of Rounds: {golferData.numRounds}</p>
           <p>Average Putts: {golferData.averagePutts}</p>
-          <button
-            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-            onClick={handleSetupPage}
-          >
-            Start Round
-          </button>
+          {!showSetupPage && (
+            <button
+              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+              onClick={handleSetupPage}
+            >
+              Start Round
+            </button>
+          )}
         </div>
       ) : (
         <p className="text-gray-500">Loading golfer data...</p>
