@@ -52,6 +52,9 @@ export default function GLogin() {
       pin,
     };
 
+    var pNumber = formData.phoneNumber;
+    sessionStorage.setItem("golferNumber", pNumber);
+
     fetch("https://callertrackerserver.up.railway.app/api/GolfLoginForm", {
       method: "POST",
       headers: {
@@ -67,7 +70,7 @@ export default function GLogin() {
           setPhoneNumber("");
           setPin("");
           // Navigate to the specified URL
-          sessionStorage.setItem("golferNumber", pNumber);
+
           window.location.href = "/Golf/Gprofile";
         } else {
           // Display error message
