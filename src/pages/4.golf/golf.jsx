@@ -1,10 +1,11 @@
-import gLogin from "../../components/golfiles/golfLogin";
+import React, { useState } from "react";
+import GLogin from "../../components/golfiles/golfLogin.jsx";
 
 const Golf = () => {
   return (
     <div>
       <h1>Login To Enter Scores</h1>
-      <golfLogin />
+      <GLogin />
     </div>
   );
 };
