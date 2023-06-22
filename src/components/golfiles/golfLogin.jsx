@@ -36,12 +36,12 @@ export default function GLogin() {
         setPin("");
         setGolferName("");
 
-        // Navigate to the specified URL
+        // this is where i want to redirect to /Golf/Gprofile
+        history.push("/Golf/Gprofile");
       })
       .catch((error) => {
         // Handle errors if any
         console.error(error);
-        alert("ERROR");
       });
 
     // Clear the form fields
