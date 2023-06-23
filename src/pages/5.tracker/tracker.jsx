@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import PatientForm from "../../components/patientform/patientForm.jsx";
 import PhoneCheckForm from "../../components/patientform/PhoneCheckForm.jsx";
 
