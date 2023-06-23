@@ -6,7 +6,7 @@ import Services from "./pages/2.services/Services";
 import Portfolio from "./pages/3.portfolio/Portfolio";
 import Golf from "./pages/4.golf/golf";
 import GProfile from "./components/golfiles/Gprofile";
-
+import Tracker from "./pages/5.tracker/tracker";
 import "./App.css";
 
 export default function App() {
@@ -20,6 +20,7 @@ export default function App() {
           <Route path="/Portfolio" element={<Portfolio />} />
           <Route path="/Golf" element={<Golf />} />
           <Route path="/Golf/Gprofile" element={<GProfile />} />
+          <Route path="/Tracker" element={<Tracker />} />
         </Routes>
       </Router>
     </div>
