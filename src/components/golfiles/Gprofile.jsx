@@ -32,7 +32,9 @@ const GProfile = () => {
     // Function to fetch the course list from the backend
     const fetchCourseList = async () => {
       try {
-        const response = await fetch("/api/CourseList");
+        const response = await fetch(
+          "https://callertrackerserver.up.railway.app/api/CourseList"
+        );
         const data = await response.json();
         setCourseList(data);
       } catch (error) {
