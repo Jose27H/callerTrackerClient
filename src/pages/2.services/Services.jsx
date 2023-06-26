@@ -17,6 +17,7 @@ const Services = () => {
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         // Set the fetched patient data in state
         setPatientData(data);
       })
@@ -65,8 +66,24 @@ const Services = () => {
     <div className="flex justify-center">
       <div className="max-w-md p-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-4">{patientData.name}</h2>
-        <p className="mb-2">{patientData.phoneNumber}</p>
-        <p className="mb-4">{patientData.email}</p>
+        <label
+          htmlFor="Phone Number"
+          className=" text-gray-700 font-semibold mb-1"
+        >
+          Phone Number:
+        </label>
+        <p className="mb-2"> {patientData.phonenumber}</p>
+
+        <label htmlFor="Email" className=" text-gray-700 font-semibold mb-1">
+          Email:
+        </label>
+        <p className="mb-4">Email:{patientData.email}</p>
+        <label
+          htmlFor="Observations"
+          className="block text-gray-700 font-semibold mb-1"
+        >
+          Observations:
+        </label>
         <textarea
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500 mb-4"
           value={patientData.message}
