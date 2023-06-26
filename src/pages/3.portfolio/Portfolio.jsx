@@ -1,16 +1,17 @@
+import React from "react";
+
 const Portfolio = () => {
   return (
-    <div>
-      <h1>Portfolio</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-        aspernatur itaque molestiae, sed repudiandae necessitatibus provident
-        cumque voluptates, illum reprehenderit in veritatis quas. Vero quibusdam
-        molestiae iusto neque exercitationem tenetur, id sapiente tempore
-        dignissimos deleniti minus, repudiandae sunt quasi est! Libero laborum
-        architecto nostrum eos ad voluptas quidem quis quas.
-      </p>
+    <div className="flex justify-center items-center">
+      <video
+        className="w-full max-w-screen-lg"
+        src="https://www.canva.com/design/DAFY6gsEM0A/U49k1O8VaykQFeIYa-eK2g/view?utm_content=DAFY6gsEM0A&utm_campaign=designshare&utm_medium=link&utm_source=recording_view"
+        controls
+      >
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 };
+
 export default Portfolio;
