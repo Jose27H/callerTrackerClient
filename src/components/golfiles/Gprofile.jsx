@@ -5,6 +5,7 @@ const GProfile = () => {
   const [showSetupPage, setShowSetupPage] = useState(false);
   const [courseName, setCourseName] = useState("");
   const [courseList, setCourseList] = useState([]);
+  const [showPreviousRounds, setShowPreviousRounds] = useState(false);
 
   useEffect(() => {
     // Function to fetch golfer data from the backend
@@ -62,13 +63,16 @@ const GProfile = () => {
       // Check if golferNumber and courseName are not empty
       if (golferNumber && courseName) {
         // Send courseName and golferNumber to the backend
-        const response = await fetch("/api/StartRound", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ golferNumber, courseName }),
-        });
+        const response = await fetch(
+          "https://callertrackerserver.up.railway.app/api/StartRound",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ golferNumber, courseName }),
+          }
+        );
 
         // Handle response from the backend
         if (response.ok) {
@@ -82,6 +86,11 @@ const GProfile = () => {
       console.error("Error starting round:", error);
     }
   };
+
+  const handlePreviousRounds = () => {
+    setShowPreviousRounds(true);
+  };
+
   return (
     <div className="max-w-lg mx-auto mt-8 p-4 bg-white rounded shadow">
       {golferData ? (
@@ -91,20 +100,28 @@ const GProfile = () => {
           </h2>
           <p>Number of Rounds: {golferData?.numRounds}</p>
           <p>Average Putts: {golferData?.averagePutts}</p>
-          {!showSetupPage && (
-            <button
-              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-              onClick={handleSetupPage}
-            >
-              Start Round
-            </button>
+          {!showSetupPage && !showPreviousRounds && (
+            <div>
+              <button
+                className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                onClick={handleSetupPage}
+              >
+                Start Round
+              </button>
+              <button
+                className="mt-4 ml-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-gray-600"
+                onClick={handlePreviousRounds}
+              >
+                See Previous Rounds
+              </button>
+            </div>
           )}
         </div>
       ) : (
         <p className="text-gray-500">Loading golfer data...</p>
       )}
 
-      {showSetupPage && (
+      {showSetupPage && !showPreviousRounds && (
         <div className="mt-8">
           <select
             className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
@@ -125,6 +142,10 @@ const GProfile = () => {
             Start Round
           </button>
         </div>
+      )}
+
+      {showPreviousRounds && (
+        <div className="mt-8">{/* Display previous rounds here */}</div>
       )}
     </div>
   );

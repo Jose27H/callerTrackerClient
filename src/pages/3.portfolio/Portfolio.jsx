@@ -2,15 +2,23 @@ import React from "react";
 
 const Portfolio = () => {
   return (
-    <div className="flex justify-center items-center">
-      <video
-        className="w-full max-w-screen-lg"
-        src="https://www.canva.com/design/DAFY6gsEM0A/U49k1O8VaykQFeIYa-eK2g/view?utm_content=DAFY6gsEM0A&utm_campaign=designshare&utm_medium=link&utm_source=recording_view"
-        controls
+    <>
+      <div className="relative w-full" style={{ paddingTop: "56.2500%" }}>
+        <iframe
+          loading="lazy"
+          className="absolute w-full h-full top-0 left-0 border-0"
+          src="https://www.canva.com/design/DAFa3PyjZ-w/view?embed"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <a
+        href="https://www.canva.com/design/DAFa3PyjZ-w/view?utm_content=DAFa3PyjZ-w&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
+        target="_blank"
+        rel="noopener"
       >
-        Your browser does not support the video tag.
-      </video>
-    </div>
+        4_Ciencias de la Piel 2 de My Personal Spa Academy
+      </a>
+    </>
   );
 };
 
