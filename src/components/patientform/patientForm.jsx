@@ -49,7 +49,7 @@ const Form = () => {
         });
 
         sessionStorage.setItem("patientNumber", formData.phoneNumber);
-        window.location.href = "/services";
+        window.location.href = "/Patienttable";
       })
       .catch((error) => {
         // Handle errors if any
