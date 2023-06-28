@@ -87,11 +87,11 @@ const PatientTable = () => {
             </div>
             <div className="patient-info">
               <div className="info-label">Phone Number:</div>
-              <div className="info-value">{patient.phoneNumber}</div>
+              <div className="info-value">{patient.phonenumber}</div>
             </div>
             <div className="patient-action">
               <button
-                onClick={() => handlePatientClick(patient.phoneNumber)}
+                onClick={() => handlePatientClick(patient.phonenumber)}
                 className="px-4 py-2 bg-blue-500 text-white rounded-md"
               >
                 Select
