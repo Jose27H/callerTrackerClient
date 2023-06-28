@@ -74,41 +74,32 @@ const PatientTable = () => {
         </button>
       </div>
 
-      <table className="min-w-full border border-gray-300">
-        <thead>
-          <tr>
-            <th className="border-b-2 border-gray-300 px-4 py-2">Name</th>
-            <th className="border-b-2 border-gray-300 px-4 py-2">Email</th>
-            <th className="border-b-2 border-gray-300 px-4 py-2">
-              Phone Number
-            </th>
-            <th className="border-b-2 border-gray-300 px-4 py-2"></th>
-          </tr>
-        </thead>
-        <tbody>
-          {patients.map((patient) => (
-            <tr key={patient.id}>
-              <td className="border-b border-gray-300 px-4 py-2 text-center">
-                {patient.name}
-              </td>
-              <td className="border-b border-gray-300 px-4 py-2 text-center">
-                {patient.email}
-              </td>
-              <td className="border-b border-gray-300 px-4 py-2 text-center">
-                {patient.phonenumber}
-              </td>
-              <td className="border-b border-gray-300 px-4 py-2 text-center">
-                <button
-                  onClick={() => handlePatientClick(patient.phonenumber)}
-                  className="px-4 py-2 bg-blue-500 text-white rounded-md"
-                >
-                  Select
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="table-container">
+        {patients.map((patient) => (
+          <div key={patient.id} className="patient-row">
+            <div className="patient-info">
+              <div className="info-label">Name:</div>
+              <div className="info-value">{patient.name}</div>
+            </div>
+            <div className="patient-info">
+              <div className="info-label">Email:</div>
+              <div className="info-value">{patient.email}</div>
+            </div>
+            <div className="patient-info">
+              <div className="info-label">Phone Number:</div>
+              <div className="info-value">{patient.phoneNumber}</div>
+            </div>
+            <div className="patient-action">
+              <button
+                onClick={() => handlePatientClick(patient.phoneNumber)}
+                className="px-4 py-2 bg-blue-500 text-white rounded-md"
+              >
+                Select
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
 
       <div className="flex justify-center mt-4">
         <button
@@ -135,6 +126,47 @@ const PatientTable = () => {
           Next
         </button>
       </div>
+
+      <style jsx>{`
+        .table-container {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .patient-row {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+          background-color: #f3f3f3;
+          padding: 1rem;
+          border-radius: 0.5rem;
+        }
+
+        .patient-info {
+          display: flex;
+          flex-basis: 50%;
+          align-items: center;
+        }
+
+        .info-label {
+          font-weight: bold;
+          margin-right: 0.5rem;
+        }
+
+        .patient-action {
+          flex-basis: 100%;
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+          .patient-info {
+            flex-basis: 100%;
+          }
+        }
+      `}</style>
     </div>
   );
 };
