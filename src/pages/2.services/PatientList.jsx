@@ -51,8 +51,7 @@ const PatientTable = () => {
 
   const handlePatientClick = (phoneNumber) => {
     sessionStorage.setItem("patientNumber", phoneNumber);
-    // Redirect to another page using react-router or window.location.href
-    // Replace '/other-page' with the actual URL of the other page
+
     window.location.href = "/Services";
   };
 
@@ -170,5 +169,6 @@ const PatientTable = () => {
     </div>
   );
 };
+``;
 
 export default PatientTable;
